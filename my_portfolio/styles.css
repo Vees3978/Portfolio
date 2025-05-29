@@ -1,0 +1,180 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f3ef; /* light beige */
+  color: #2e2e2e;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3c5a40; /* forest green */
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+#menu-btn {
+  font-size: 1.8rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #d8cfc4; /* muted tan */
+  height: 100%;
+  width: 250px;
+  padding-top: 3rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+.sidebar a {
+  display: block;
+  color: #3c2f2f; /* earthy brown */
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid #b5a99a;
+}
+.sidebar a:hover {
+  background-color: #b5a99a; /* earthy tan hover */
+}
+#close-btn {
+  background: none;
+  border: none;
+  color: #3c2f2f;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+.sidebar.show {
+  transform: translateX(0);
+}
+.hidden {
+  transform: translateX(-100%);
+}
+
+/* Main content */
+main {
+  flex: 1; /* fill remaining vertical space */
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+main h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Project list grid */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Project card styling */
+.project-card {
+  background-color: #d8cfc4; /* muted tan for cards */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-card h4 {
+  margin-bottom: 0.5rem;
+  color: #3c2f2f; /* earthy brown */
+}
+
+.project-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #5a5a5a;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: #3c5a40;
+  font-weight: 600;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+/* Projects Section */
+.project-category {
+  margin-bottom: 3rem;
+}
+
+.project-category h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #3c5a40; /* forest green */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Special styling for ArcGIS project cards */
+.arcgis-project {
+  border-left: 5px solid #007AC2; /* ArcGIS blue accent */
+  padding-left: 1.2rem; /* add left padding so text isn't too close to border */
+}
+
+.arcgis-project h4 {
+  color: #007AC2;
+}
+.project-details img {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+.project-details p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
